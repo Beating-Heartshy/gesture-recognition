@@ -103,8 +103,8 @@ print(f'Test accuracy: {test_acc:.3f}, Test loss: {test_loss:.3f}')
 y_pred = model.predict(X_test)
 y_pred_classes = np.argmax(y_pred, axis=1)
 y_true = np.argmax(Y_test, axis=1)
-labels = ["I", "You", "He", "Like", "Study", "This", "What", "Where", "Book", "Go",
-          "Eat", "How", "Together", "Want", "Name", "Pen", "Good", "Bad" , "NULL"]
+labels = ["I", "You", "He", "Like", "Study", "This", "What", "Where", "Book", "Go", "NULL" ,
+          "Eat", "How", "Together", "Want", "Name", "Pen", "Good", "Bad" ]
 conf_matrix = confusion_matrix(y_true, y_pred_classes)
 conf_matrix_normalized = conf_matrix.astype('float') / conf_matrix.sum(axis=1)[:, np.newaxis]
 conf_matrix_str = np.array([["{:.2f}".format(value) for value in row] for row in conf_matrix_normalized])
